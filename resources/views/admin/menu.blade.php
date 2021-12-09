@@ -77,20 +77,18 @@
                   </p>
                 </a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="{{ route('customer-list') }}" class="nav-link">
                   <i class="nav-icon fas fa-columns"></i>
                   <p>
                     Customer
                   </p>
                 </a>
-              </li>
+              </li> --}}
               <li class="nav-item">
                 <a href="{{ route('patient-list') }}" class="nav-link">
                   <i class="nav-icon fas fa-columns"></i>
-                  <p>
-                    Patient
-                  </p>
+                  <p>Patient</p>
                 </a>
               </li>
               <li class="nav-item">
