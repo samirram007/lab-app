@@ -15,7 +15,7 @@ class PatientController extends Controller
             
             //$data = array();
             $data['title']= "Patient";
-            $data['name']= "Patient list";
+            $data['name']= "Patient File";
              
           
             if (Session::has('loginid')) 
