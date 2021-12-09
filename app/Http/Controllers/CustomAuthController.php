@@ -85,14 +85,14 @@ class CustomAuthController extends Controller
         ];
        
        //  print_r(json_encode($data));
-        $headers=["Accept" => "application/json"];
+        $headers=["Accept" => "*"];//
       $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'users/login', $data)->json();
        // $response = Http::withHeaders($headers)->post('https://api.lifefertilitycentre.com/api/v1/pages/users/login', $data);
        // $response = Http::withHeaders($headers)->post('http://115.124.120.251:5052/api/v1/pages/UserLogin.php', $data);
         // $API_PATH =env('API_RESOURCE_URL') .'/users/login';
-        // print_r($API_PATH);
+        // print_r($API_PATH);->json()
         //  $response = Http::withHeaders($headers)->post($API_PATH, $data);
-        //dd($response);
+      // dd($response);
          if($response['status']){
             // dd('HI');
            // $request->session()->put('_token',$response['id']['token']);
@@ -104,7 +104,7 @@ class CustomAuthController extends Controller
          //   dd($request->session()->get('loginid'));
            $json_call_data=[ "ID"=>$response['data']['UserID'] ];
         
-       // $headers=["Authorization" => "Bearer ".$request->session()->get('_token'),"Accept" => "application/json",];
+       // $headers=["Authorization" => "Bearer ".$request->session()->get('_token'),"Accept" => "*"];
            //  $userdata=Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'/api/v1/pages/GetUserDetailsByID.php', $json_call_data)->json();
             // dd($request->header());
             // dd($userdata);
@@ -121,7 +121,7 @@ class CustomAuthController extends Controller
         $data = array();
         if (Session::has('loginid')) {
             $json_call_data=[ "ID"=>Session::get('loginid')];
-            $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
+            $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "*"];
             $data = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'users/read', $json_call_data)->json();
             Session::put('user_data',$data['data']);
         }
@@ -137,9 +137,11 @@ class CustomAuthController extends Controller
         $data = array();
         if (Session::has('loginid')) {
             $json_call_data=[ "UserID"=>Session::get('loginid')];
-            $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
+          
+            $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "*"];
+           // dd($headers);
             $data = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'users/read', $json_call_data)->json();
-           // dd($data);
+             
             Session::put('user_data',$data['data'][0]);
            
             $data=$data['data'][0];
@@ -161,7 +163,7 @@ class CustomAuthController extends Controller
       
         if (Session::has('loginid')) {
             $json_call_data=[ "ID"=>Session::get('loginid')];
-            $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
+            $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "*"];
              //$res = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'/api/v1/pages/ListOfSessions.php', $json_call_data)->json();
              //Session::put('user_data',$data['response'][0]);
              //$data['collection']=$res['response'][0];
@@ -218,7 +220,7 @@ class CustomAuthController extends Controller
       // DB::insert('insert into customer_detail(customer_name, contact_no, address, description) values(?,?,?,?)',
       //   [$customer_name , $contact_no , $address , $description]);
       //   return redirect('customer')->with ('success' , 'Data Saved')
-         $headers=["Accept" => "application/json",];
+         $headers=["Accept" => "*"];
          $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'/api/v1/pages/addcustomer.php', $data)->json();
 
          if($response['status']){
@@ -234,7 +236,7 @@ class CustomAuthController extends Controller
             "ID"=>$response['id']['UserID']
         ];
         
-       // $headers=["Authorization" => "Bearer ".$request->session()->get('_token'),"Accept" => "application/json",];
+       // $headers=["Authorization" => "Bearer ".$request->session()->get('_token'),"Accept" => "*",];
            //  $userdata=Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'/api/v1/pages/GetUserDetailsByID.php', $json_call_data)->json();
             // dd($request->header());
             // dd($userdata);
@@ -255,7 +257,7 @@ class CustomAuthController extends Controller
       
         if (Session::has('loginid')) {
             $json_call_data=[ "ID"=>Session::get('loginid')];
-            $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
+            $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "*"];
              //$res = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'/api/v1/pages/ListOfSessions.php', $json_call_data)->json();
              //Session::put('user_data',$data['response'][0]);
              //$data['collection']=$res['response'][0];
@@ -283,7 +285,7 @@ class CustomAuthController extends Controller
       
         if (Session::has('loginid')) {
             $json_call_data=[ "ID"=>Session::get('loginid')];
-            $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
+            $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "*"];
              $res = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'/api/v1/pages/ListOfSessions.php', $json_call_data)->json();
              //Session::put('user_data',$data['response'][0]);
              $data['collection']=$res['response'];
