@@ -47,7 +47,7 @@ Route::group(['middleware'=>'preventbackhistory'],function(){
         Route::post('/customer-save',[CU::class, 'saveCustomer'])->name('save-customer');
 
         Route::get('/patient', [CU:: class, 'getPatientList'])->name('patient-list');
-        Route::get('/addpatient',[CU::class, 'PatientAddModal'])->name('addpatientr');
+        Route::get('/addpatient',[CU::class, 'PatientAddModal'])->name('addpatient');
         Route::post('/patient-save',[CU::class, 'savePatient'])->name('save-patient');
 
         Route::get('/service',[SC::class, 'getServiceList'])->name('service-list');
