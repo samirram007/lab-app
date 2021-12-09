@@ -1,7 +1,6 @@
  
   {{-- <div class="modal fade" id="modalAddProduct"> --}}
-  
-    <div class="modal-dialog {{ 'modal-'.$info['size']}}  ">
+      <div class="modal-dialog {{ 'modal-'.$info['size']}}  ">
         <div class="modal-content bg-secondary">
           <div class="modal-header">
             <h4 class="modal-title">{{$info['title']}}</h4>
