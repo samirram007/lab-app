@@ -1,0 +1,12 @@
+[2021-12-11 05:44:52] local.ERROR: Class 'Yoeunes\Toastr\ToastrServiceProvider' not found {"exception":"[object] (Error(code: 0): Class 'Yoeunes\\Toastr\\ToastrServiceProvider' not found at D:\\wamp64\\www\\lab-app\\lab-app\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php:208)
+[stacktrace]
+#0 D:\\wamp64\\www\\lab-app\\lab-app\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Yoeunes\\\\Toastr\\\\...')
+#1 D:\\wamp64\\www\\lab-app\\lab-app\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 D:\\wamp64\\www\\lab-app\\lab-app\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(649): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 D:\\wamp64\\www\\lab-app\\lab-app\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 D:\\wamp64\\www\\lab-app\\lab-app\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(237): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 D:\\wamp64\\www\\lab-app\\lab-app\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 D:\\wamp64\\www\\lab-app\\lab-app\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 D:\\wamp64\\www\\lab-app\\lab-app\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
