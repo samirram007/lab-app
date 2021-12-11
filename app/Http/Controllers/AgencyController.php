@@ -7,4 +7,8 @@ use Illuminate\Http\Request;
 class AgencyController extends Controller
 {
     //
+    function index()
+    {
+        return true;
+    }
 }
