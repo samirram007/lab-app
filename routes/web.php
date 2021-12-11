@@ -7,16 +7,12 @@ use App\Http\Controllers\CustomerController as CU;
 use App\Http\Controllers\PatientController as PU;
 use App\Http\Controllers\ProductController as PC;
 use App\Http\Controllers\EmployeeController as EC;
-use App\Http\Controllers\RefDoctorController as RC;
+use App\Http\Controllers\Ref_doctorController as RC;
 use App\Http\Controllers\AgencyController as AC;
-use App\Http\Controllers\OutdoorDoctorController as OC;
-use App\Http\Controllers\ReportingDoctorController as RU;
+use App\Http\Controllers\Outdoor_DoctorController as OC;
+use App\Http\Controllers\Reporting_DoctorController as RU;
 
  
-
-// Route::get('/welcome', function () {
-//     return view('welcome');
-// });
 
 
 Route::get('/registration', [CC::class, 'registration']);
@@ -64,17 +60,17 @@ Route::group(['middleware'=>'preventbackhistory'],function(){
         Route::get('/addemployee',[EC::class, 'EmployeeAddModal'])->name('addemployee');
         Route::post('/employee-save',[EC::class, 'saveEmployee'])->name('save-employee');
 
-        Route::get('/outdoor_doctor', [OC:: class, 'getOutdoor_doctorList'])->name('outdoor_doctor-list');
-        Route::get('/addoutdoor_doctor',[OC::class, 'Outdoor_doctorAddModal'])->name('addoutdoor_doctor');
-        Route::post('/outdoor_doctor-save',[OC::class, 'saveOutdoor_doctor'])->name('save-outdoor_doctor');
+        Route::get('/outdoordoctor', [OC:: class, 'getOutdoordoctorList'])->name('outdoordoctor-list');
+        Route::get('/addoutdoordoctor',[OC::class, 'OutdoordoctorAddModal'])->name('addoutdoordoctor');
+        Route::post('/outdoordoctor-save',[OC::class, 'saveOutdoordoctor'])->name('save-outdoordoctor');
 
-        Route::get('/ref_doctor', [RC:: class, 'getRef_doctorList'])->name('ref_doctor-list');
-        Route::get('/addref_doctor',[RC::class, 'Ref_doctorAddModal'])->name('addref_doctor');
-        Route::post('/ref_doctor-save',[RC::class, 'saveRef_doctor'])->name('save-ref_doctor');
+        Route::get('/refdoctor', [RC:: class, 'getRefdoctorList'])->name('refdoctor-list');
+        Route::get('/addrefdoctor',[RC::class, 'RefdoctorAddModal'])->name('addrefdoctor');
+        Route::post('/refdoctor-save',[RC::class, 'saveRefdoctor'])->name('save-refdoctor');
 
-        Route::get('/reporting_doctor', [RU:: class, 'getReporting_doctorList'])->name('/reporting_doctor-list');
-        Route::get('/addreporting_doctor',[RU::class, 'Reporting_doctorAddModal'])->name('addreporting_doctor');
-        Route::post('/reporting_doctor-save',[RU::class, 'saveReporting_doctor'])->name('save-reporting_doctor');
+        Route::get('/reportingdoctor', [RU:: class, 'getReportingdoctorList'])->name('/reportingdoctor-list');
+        Route::get('/addreportingdoctor',[RU::class, 'ReportingdoctorAddModal'])->name('addreportingdoctor');
+        Route::post('/reportingdoctor-save',[RU::class, 'saveReportingdoctor'])->name('save-reportingdoctor');
 
 
         Route::get('/service',[SC::class, 'getServiceList'])->name('service-list');
