@@ -14,10 +14,6 @@ use App\Http\Controllers\Reporting_DoctorController as RU;
 
  
 
-// Route::get('/welcome', function () {
-//     return view('welcome');
-// });
-
 
 Route::get('/registration', [CC::class, 'registration']);
 Route::post('/register-user', [CC::class, 'registerUser'])->name('register-user');
