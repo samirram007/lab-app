@@ -9,11 +9,9 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-<<<<<<< Updated upstream
-          <form method="post" action="{{ route('save-customer')}}">
-=======
+ 
           <form method="post" action="{{ route('save-agency')}}">
->>>>>>> Stashed changes
+ 
             @csrf  
    
           <div class="modal-body bg-light">
@@ -21,11 +19,9 @@
             
               <div class="form-group">
                 <label for="Code">Code</label>
-<<<<<<< Updated upstream
-                <input type="text" class="form-control" name="Code" id="Code" placeholder="P0" value="{{ $Code }}">
-=======
+ 
                 <input type="text" class="form-control" name="Code" id="Code" placeholder="" value="{{ $Code }}">
->>>>>>> Stashed changes
+ 
               </div>
               <div class="form-group">
                 <label for="Name">Name</label>
