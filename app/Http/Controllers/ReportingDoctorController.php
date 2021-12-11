@@ -7,50 +7,51 @@ namespace App\Http\Controllers;
     use Illuminate\Support\Facades\Session;
     use Illuminate\Support\Facades\Hash;
     
-class AgencyController extends Controller
+class ReportingdoctorController extends Controller
 {
-
-         function getAgencyList(Request $request){
+         function getReportingdoctorList(Request $request){
        
             //return "Welcome!! to your Dashboard";
             
             //$data = array();
-            $data['title']= "Agency";
-            $data['name']= "Agency File";
+            $data['title']= "Reportingdoctor";
+            $data['name']= "Reportingdoctor File";
              
           
             if (Session::has('loginid')) 
             { 
                 $json_call_data=[ "UserID"=>'all']; 
                 $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
-                  $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'agency/read', $json_call_data)->json();
+                  $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'reportingdoctor/read', $json_call_data)->json();
                  // dd($response);
                  //Session::put('user_data',$data['response'][0]);
                  if($response['status']){
                     $data['collection']=$response['data'];
                    // dd($response['data']);
-                   $data['new']=["UserID"=>"","UserType"=>"agency","Code"=>"", "Name"=>"", "ContactNo"=>"", "CommissionDept"=>"", "Address"=>"", "Origin"=>""];
+                   $data['new']=["UserID"=>"","UserType"=>"reportingdoctor","Code"=>"", "Name"=>"", 
+                   "ContactNo"=>"", "DoctorType"=>"", "Degree"=>"", "RegistrationNo"=>"", "Salary"=>""  ];
                   
                  }
                  else
                  {
                   $data['collection']=[];
-                 $data['new']=["UserID"=>"","UserType"=>"agency","Code"=>"", "Name"=>"", "ContactNo"=>"", "CommissionDept"=>"", "Address"=>"", "Origin"=>""];
-                // $this->agencyAddModal($request);
+                 $data['new']=["UserID"=>"","UserType"=>"reportingdoctor","Code"=>"", "Name"=>"", 
+                 "ContactNo"=>"", "DoctorType"=>"", "Degree"=>"", "RegistrationNo"=>"","Salary"=>""  ];
+                // $this->reportingdoctorAddModal($request);
                  }
                  $data['service']=["ServiceID"=>"","ServiceDate"=>date('Y-m-d H:i:s'),
-                 "AgencyID"=>"","AgencyData"=>[], "ProductID"=>"", "ProductData"=>[], "Description"=>"", "Amount"=>"", "Status"=>""];
-                 return view('agency.list', $data);
+                 "ReportingdoctorID"=>"","ReportingdoctorData"=>[], "ProductID"=>"", "ProductData"=>[], "Description"=>"", "Amount"=>"", "Status"=>""];
+                 return view('reportingdoctor.list', $data);
                      //dd($data);
             }
            
        
         } 
-        function AgencyAddModal(Request $request)
+        function ReportingdoctorAddModal(Request $request)
         {
     
     
-            $info['title']="Agency [add/modify]";
+            $info['title']="Reportingdoctor [add/modify]";
             $info['size']=$request->get('size');
             $data=$request->get('param');
             $decrypt_data 						= openssl_decrypt($data,"AES-128-ECB",md5(env('ENC_SALT')));	
@@ -58,13 +59,13 @@ class AgencyController extends Controller
     //print_r($decrypt_data);
            
             $elmData['info']=$info;
-            $GetView=view('agency.addModal',$elmData)->render();
+            $GetView=view('reportingdoctor.addModal',$elmData)->render();
             return response()->json([
                 "status" => true,
                 "html" => $GetView
             ]);
         }
-        function saveAgency(Request $request)
+        function saveReportingdoctor(Request $request)
             {
                 $data=$request->all();
                 $data_json = [
@@ -73,30 +74,30 @@ class AgencyController extends Controller
                     "Code" => $request->Code,
                     "Name" => $request->Name,
                     "ContactNo" => $request->ContactNo,
-                    "CommissionDept" =>  $request->CommissionDept,                    
-                    "Address" =>  $request->Address,
-                    "Origin" =>  $request->Origin, 
+                    "DoctorType" =>  $request->DoctorType, 
+                    "Degree" =>  $request->Degree, 
+                    "RegistrationNo" =>  $request->RegistrationNo, 
+                    "Salary" =>  $request->Salary, 
                 ];
             //  dd(json_encode($data));
                 
               // $response = Http::post(env('API_RESOURCE_URL').'product/create', $data);
                $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
-               $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'agency/create', $data_json);
+               $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'reportingdoctor/create', $data_json);
         
                 $res = $response->json();
                 
                 if ($res['status']) {
-                    toastr('Agency update successfull','success');
+                    toastr('Reportingdoctor update successfull','success');
                     return back()->with('success', 'You have registered successfully ');
                 } else {
-                    toastr('Agency update unsuccessfull','fail');
+                    toastr('Reportingdoctor update unsuccessfull','fail');
                     return back()->with('fail', 'Something went wrong');
                 }
-                //return $this->getAgencyList($request);
+                //return $this->getReportingdoctorList($request);
               
             }
         
        
     
     }
->>>>>>> Stashed changes

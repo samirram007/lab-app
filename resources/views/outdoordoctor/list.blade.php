@@ -18,17 +18,10 @@
               <div class="col-sm-6">
                 
                 <ol class="breadcrumb float-sm-right">
-<<<<<<< Updated upstream
-                  {{-- <!--li class="breadcrumb"><a class="btn btn-primary mx-2" href="{{ route('product-page')}}"><i class="fas fa-plus mx-1"></i>New</a></li--> --}}
+                  {{-- <!--li class="breadcrumb"><a class="btn btn-primary mx-2" href="{{ route('outdoordoctor-page')}}"><i class="fas fa-plus mx-1"></i>New</a></li--> --}}
                   <li class="breadcrumb">
                     
-                    {{-- <!--a   href ="{{ route('addproduct') }}"  class="btn btn-primary mx-2" data-toggle="modal" data-target="#modalAddProduct"--> --}}
-=======
-                  {{-- <!--li class="breadcrumb"><a class="btn btn-primary mx-2" href="{{ route('agency-page')}}"><i class="fas fa-plus mx-1"></i>New</a></li--> --}}
-                  <li class="breadcrumb">
-                    
-                    {{-- <!--a   href ="{{ route('addagency') }}"  class="btn btn-primary mx-2" data-toggle="modal" data-target="#modalAddProduct"--> --}}
->>>>>>> Stashed changes
+                    {{-- <!--a   href ="{{ route('addoutdoordoctor') }}"  class="btn btn-primary mx-2" data-toggle="modal" data-target="#modalAddProduct"--> --}}
                       
                 </li>
                   
@@ -53,7 +46,7 @@
                         <div class="card-header d-flex">
                           <a href="javascript:;" data-real="{{ $new['UserID'] }}" 
                       data-param="{{openssl_encrypt(json_encode($new),"AES-128-ECB",md5(env('ENC_SALT'))) }}" 
-                      data-url="{{ route('addagency') }}" data-size="md" title="Edit Area" class="load-popup btn btn-primary mx-2  "> 
+                      data-url="{{ route('addoutdoordoctor') }}" data-size="md" title="Edit Area" class="load-popup btn btn-primary mx-2  "> 
                   <i class="fas fa-plus mx-1"></i>New</a>
                           {{-- <h3 class="card-title">Service item with default features</h3> --}}
                           
@@ -67,9 +60,11 @@
                               <th>Code</th>
                               <th>Name</th>
                               <th>Contact</th>
-                              <th>Address</th>
-                              <th>CommissionDept</th>
-                              <th>Origin</th>
+                              <th>DoctorType</th>
+                              <th>Degree</th>
+                              <th>RegistrationNo</th>
+                              <th>ChamberTimimg</th>
+                              <th>ChamberStartDate</th>
                               <th>Action</th>
                             </tr>
                             </thead>
@@ -80,25 +75,23 @@
                                     <td>{{  $item['Code'] }}</td>
                                     <td>{{  $item['Name'] }} </td>
                                     <td>{{  $item['ContactNo'] }}</td>
-                                    <td>{{  $item['Address'] }}</td>
-                                    <td>{{  $item['CommissionDept'] }}</td>
-                                    <td>{{  $item['Origin'] }}</td>
+                                    <td>{{  $item['DoctorType'] }}</td>
+                                    <td>{{  $item['Degree'] }}</td>
+                                    <td>{{  $item['RegistrationNo'] }}</td>
+                                    <td>{{  $item['ChamberTimimg'] }}</td>
+                                    <td>{{  $item['ChamberStartDate'] }}</td>
                                     <td><div class="edit-icon">
                                     
-<?php $service['AgencyID']=$item['UserID'] ?>
-<?php $service['AgencyData']=$item ?>
-{{-- {{ $service['AgencyData']=$item }} --}}
+<?php $service['OutdoordoctorID']=$item['UserID'] ?>
+<?php $service['OutdoordoctorData']=$item ?>
+{{-- {{ $service['OutdoordoctorData']=$item }} --}}
               <a href="javascript:;" data-real="{{ $item['UserID'] }}" 
               data-param="{{openssl_encrypt(json_encode($item),"AES-128-ECB",md5(env('ENC_SALT'))) }}" 
-              data-url="{{ route('addagency') }}" data-size="md" title="Edit Area" 
+              data-url="{{ route('addoutdoordoctor') }}" data-size="md" title="Edit Area" 
               class="load-popup text-white edit-btn btn btn-info "><i class="fas fa-pencil-alt"></i> Edit</a>
 
 <a href="javascript:" data-param="{{openssl_encrypt(json_encode($service),"AES-128-ECB",md5(env('ENC_SALT'))) }}" 
-<<<<<<< Updated upstream
-data-url="{{ route('addservice') }}" data-size="md" title="Edit Area"  class="load-popup btn btn-primary ml-1"><i class="fas fa-plus"></i> Service</a>
-=======
-data-url="{{ route('addagency') }}" data-size="md" title="Edit Area"  class="load-popup btn btn-primary ml-1"><i class="fas fa-plus"></i> Service</a>
->>>>>>> Stashed changes
+data-url="{{ route('addoutdoordoctor') }}" data-size="md" title="Edit Area"  class="load-popup btn btn-primary ml-1"><i class="fas fa-plus"></i> Service</a>
 
             </div>
           
@@ -122,11 +115,7 @@ data-url="{{ route('addagency') }}" data-size="md" title="Edit Area"  class="loa
           </div><!-- /.container-fluid -->
         </section>
         <!-- /.content -->
-<<<<<<< Updated upstream
         {{-- @include('addproduct') --}}
-=======
-        {{-- @include('addagency') --}}
->>>>>>> Stashed changes
       </div>
 
       <script>

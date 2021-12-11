@@ -28,13 +28,13 @@ class PatientController extends Controller
                  if($response['status']){
                     $data['collection']=$response['data'];
                    // dd($response['data']);
-                   $data['new']=["UserID"=>"","UserType"=>"patient","Code"=>"", "Name"=>"", "Email"=>"", "ContactNo"=>""];
+                   $data['new']=["UserID"=>"","UserType"=>"patient","Code"=>"", "Name"=>"", "ContactNo"=>"", "Age"=>"", "Gender"=>"", "Origin"=>"", "Address"=>""  ];
                   
                  }
                  else
                  {
                   $data['collection']=[];
-                 $data['new']=["UserID"=>"","UserType"=>"patient","Code"=>"", "Name"=>"", "Email"=>"", "ContactNo"=>""];
+                 $data['new']=["UserID"=>"","UserType"=>"patient","Code"=>"", "Name"=>"", "ContactNo"=>"", "Age"=>"", "Gender"=>"", "Origin"=>"","Address"=>""  ];
                 // $this->patientAddModal($request);
                  }
                  $data['service']=["ServiceID"=>"","ServiceDate"=>date('Y-m-d H:i:s'),
@@ -72,9 +72,15 @@ class PatientController extends Controller
                     "Code" => $request->Code,
                     "Name" => $request->Name,
                     "ContactNo" => $request->ContactNo,
+<<<<<<< Updated upstream
                     "Age" =>  $request->Age,
                     "Gender" =>  $request->Gender,
                     "Address" =>  $request->Address,
+=======
+                    "Age" =>  $request->Age, 
+                    "Gender" =>  $request->Gender, 
+                    "Address" =>  $request->Address, 
+>>>>>>> Stashed changes
                     "Origin" =>  $request->Origin, 
                 ];
             //  dd(json_encode($data));

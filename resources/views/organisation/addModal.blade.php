@@ -9,11 +9,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-<<<<<<< Updated upstream
-          <form method="post" action="{{ route('save-customer')}}">
-=======
-          <form method="post" action="{{ route('save-agency')}}">
->>>>>>> Stashed changes
+          <form method="post" action="{{ route('save-organisation')}}">
             @csrf  
    
           <div class="modal-body bg-light">
@@ -21,32 +17,37 @@
             
               <div class="form-group">
                 <label for="Code">Code</label>
-<<<<<<< Updated upstream
-                <input type="text" class="form-control" name="Code" id="Code" placeholder="P0" value="{{ $Code }}">
-=======
                 <input type="text" class="form-control" name="Code" id="Code" placeholder="" value="{{ $Code }}">
->>>>>>> Stashed changes
               </div>
               <div class="form-group">
                 <label for="Name">Name</label>
-                <input type="text" class="form-control" name="Name" id="Name" placeholder="Agency Name" value="{{ $Name }}">
+                <input type="text" class="form-control" name="Name" id="Name" placeholder="Organisation Name" value="{{ $Name }}">
               </div>
               <div class="form-group">
-                <label for="ContactNo">ContactNo</label>
-                <input type="text" class="form-control" name="ContactNo" id="ContactNo" placeholder="ContactNo" value="{{ $ContactNo }}">
+                <label for="ContactNo1">ContactNo1</label>
+                <input type="text" class="form-control" name="ContactNo1" id="ContactNo1" placeholder="ContactNo1" value="{{ $ContactNo1 }}">
+              </div>
+              <div class="form-group">
+                <label for="ContactNo2">ContactNo2</label>
+                <input type="text" class="form-control" name="ContactNo2" id="ContactNo2" placeholder="ContactNo2" value="{{ $ContactNo2 }}">
               </div>
               <div class="form-group">
                 <label for="Address">Address</label>
                 <input type="text" class="form-control" name="Address" id="Address" placeholder="Address" value="{{ $Address }}">
               </div>
               <div class="form-group">
-                <label for="CommissionDept">CommissionDept</label>
-                <input type="text" class="form-control" name="CommissionDept" id="CommissionDept" placeholder="CommissionDept" value="{{ $CommissionDept }}">
+                <label for="Email">Email</label>
+                <input type="text" class="form-control" name="Email" id="Email" placeholder="Email" value="{{ $Email }}">
               </div>
               <div class="form-group">
-                <label for="Origin">Origin</label>
-                <input type="text" class="form-control" name="Origin" id="Origin" placeholder="Origin" value="{{ $Origin }}">
-              </div>               
+                <label for="DateOfFoundation">DateOfFoundation</label>
+                <input type="text" class="form-control" name="DateOfFoundation" id="DateOfFoundation" placeholder="DateOfFoundation" value="{{ $DateOfFoundation }}">
+              </div>
+              <div class="form-group">
+                <label for="CELicenseNo">CELicenseNo</label>
+                <input type="text" class="form-control" name="CELicenseNo" id="CELicenseNo" placeholder="CELicenseNo" value="{{ $CELicenseNo }}">
+              </div>
+               
               
            
           </div>
