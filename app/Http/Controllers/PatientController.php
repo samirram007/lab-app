@@ -72,15 +72,10 @@ class PatientController extends Controller
                     "Code" => $request->Code,
                     "Name" => $request->Name,
                     "ContactNo" => $request->ContactNo,
-<<<<<<< Updated upstream
-                    "Age" =>  $request->Age,
-                    "Gender" =>  $request->Gender,
-                    "Address" =>  $request->Address,
-=======
+
                     "Age" =>  $request->Age, 
                     "Gender" =>  $request->Gender, 
                     "Address" =>  $request->Address, 
->>>>>>> Stashed changes
                     "Origin" =>  $request->Origin, 
                 ];
             //  dd(json_encode($data));
