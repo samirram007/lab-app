@@ -48,7 +48,7 @@
                       data-param="{{openssl_encrypt(json_encode($new),"AES-128-ECB",md5(env('ENC_SALT'))) }}" 
                       data-url="{{ route('addorganisation') }}" data-size="md" title="Edit Area" class="load-popup btn btn-primary mx-2  "> 
                   <i class="fas fa-plus mx-1"></i>New</a>
-                          {{-- <h3 class="card-title">Service item with default features</h3> --}}
+                          {{-- <h3 class="card-title">Organisation item with default features</h3> --}}
                           
                         </div>
                         <!-- /.card-header -->
@@ -91,7 +91,7 @@
               class="load-popup text-white edit-btn btn btn-info "><i class="fas fa-pencil-alt"></i> Edit</a>
 
 <a href="javascript:" data-param="{{openssl_encrypt(json_encode($service),"AES-128-ECB",md5(env('ENC_SALT'))) }}" 
-data-url="{{ route('addservice') }}" data-size="md" title="Edit Area"  class="load-popup btn btn-primary ml-1"><i class="fas fa-plus"></i> Service</a>
+data-url="{{ route('addorganisation') }}" data-size="md" title="Edit Area"  class="load-popup btn btn-primary ml-1"><i class="fas fa-plus"></i> Service</a>
 
             </div>
           

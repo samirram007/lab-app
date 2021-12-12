@@ -52,7 +52,7 @@
            
           </div>
           <div class="modal-footer justify-content-between">
-            <input type="hidden" class="form-control" name="UserID" id="UserID"  value="{{ $UserID }}">
+            <input type="hidden" class="form-control" name="MasterID" id="MasterID"  value="{{ $MasterID }}">
             <input type="hidden" class="form-control" name="UserType" id="UserType"  value="{{ $UserType }}">
             <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-outline-light">Save changes</button>
