@@ -10,10 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class OrganisationController extends Controller
 {
      function getOrganisationList(Request $request){
-   
-        //return "Welcome!! to your Dashboard";
-        
-        //$data = array();
+
         $data['title']= "Organisation";
         $data['name']= "Organisation list";
          
@@ -21,8 +18,8 @@ class OrganisationController extends Controller
         if (Session::has('loginid')) 
         { 
             $json_call_data=[ "MasterID"=>'all']; 
-            $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
-              $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'organisation/read', $json_call_data)->json();
+            $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "*",];
+              $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'org/read', $json_call_data)->json();
              // dd($response);
              //Session::put('user_data',$data['response'][0]);
              if($response['status']){
@@ -84,8 +81,8 @@ class OrganisationController extends Controller
         //  dd(json_encode($data));
             
           // $response = Http::post(env('API_RESOURCE_URL').'product/create', $data);
-           $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
-           $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'organisation/create', $data_json);
+           $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "*",];
+           $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'org/create', $data_json);
     
             $res = $response->json();
             
