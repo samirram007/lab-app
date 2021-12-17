@@ -17,12 +17,12 @@ class AgencyController extends Controller
             //$data = array();
             $data['title']= "Agency";
             $data['name']= "Agency File";
-             
+            
           
             if (Session::has('loginid')) 
             { 
                 $json_call_data=[ "UserID"=>'all']; 
-                $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
+                $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "*",];
                   $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'agency/read', $json_call_data)->json();
                  // dd($response);
                  //Session::put('user_data',$data['response'][0]);
@@ -80,7 +80,7 @@ class AgencyController extends Controller
             //  dd(json_encode($data));
                 
               // $response = Http::post(env('API_RESOURCE_URL').'product/create', $data);
-               $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
+               $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "*",];
                $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'agency/create', $data_json);
         
                 $res = $response->json();

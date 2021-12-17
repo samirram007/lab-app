@@ -58,7 +58,8 @@
                             <thead>
                             <tr>
                               <th>Code</th>
-                              <th>Name</th>                             
+                              <th>Name</th> 
+                              <th>Description</th>                             
                               <th>Action</th>
                             </tr>
                             </thead>
@@ -67,7 +68,8 @@
                                 
                                 <tr>
                                     <td>{{  $item['Code'] }}</td>
-                                    <td>{{  $item['Name'] }} </td>                                   
+                                    <td>{{  $item['Name'] }} </td>   
+                                    <td>{{  $item['Description'] }} </td>                                 
                                     <td><div class="edit-icon">
                                     
 <?php $service['DepartmentID']=$item['MasterID'] ?>

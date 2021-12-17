@@ -44,9 +44,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header d-flex">
-                          <a href="javascript:;" data-real="{{ $new['UserID'] }}" 
+                          <a href="javascript:;" data-real="{{ $new['MasterID'] }}" 
                       data-param="{{openssl_encrypt(json_encode($new),"AES-128-ECB",md5(env('ENC_SALT'))) }}" 
-                      data-url="{{ route('addoutdoordoctor') }}" data-size="md" title="Edit Area" class="load-popup btn btn-primary mx-2  "> 
+                      data-url="{{ route('addvisitappoint') }}" data-size="md" title="Edit Area" class="load-popup btn btn-primary mx-2  "> 
                   <i class="fas fa-plus mx-1"></i>New</a>
                           {{-- <h3 class="card-title">Service item with default features</h3> --}}
                           
@@ -58,13 +58,10 @@
                             <thead>
                             <tr>
                               <th>Code</th>
-                              <th>Name</th>                              
-                              <th>Contact</th>
-                              <th>DoctorType</th>
-                              <th>Degree</th>
-                              <th>RegistrationNo</th>
-                              <th>ChamberTimimg</th>
-                              <th>ChamberStartDate</th>
+                              <th>Name</th> 
+                              <th>Charges</th>  
+                              <th>OutdoorDept</th> 
+                              <th>Active</th>                                                         
                               <th>Action</th>
                             </tr>
                             </thead>
@@ -73,25 +70,22 @@
                                 
                                 <tr>
                                     <td>{{  $item['Code'] }}</td>
-                                    <td>{{  $item['Name'] }} </td>                                   
-                                    <td>{{  $item['ContactNo'] }}</td>
-                                    <td>{{  $item['DoctorType'] }}</td>
-                                    <td>{{  $item['Degree'] }}</td>
-                                    <td>{{  $item['RegistrationNo'] }}</td>
-                                    <td>{{  $item['ChamberTimimg'] }}</td>
-                                    <td>{{  $item['ChamberStartDate'] }}</td>
+                                    <td>{{  $item['Name'] }} </td>   
+                                    <td>{{  $item['Description'] }} </td>   
+                                    <td>{{  $item['Active'] }} </td>  
+                                    <td>{{  $item['OutdoorDept'] }} </td>                                                               
                                     <td><div class="edit-icon">
                                     
-<?php $service['OutdoorDoctorID']=$item['UserID'] ?>
-<?php $service['OutdoorDoctorData']=$item ?>
-{{-- {{ $service['OutdoorDoctorData']=$item }} --}}
-              <a href="javascript:;" data-real="{{ $item['UserID'] }}" 
+<?php $service['VisitAppointID']=$item['MasterID'] ?>
+<?php $service['VisitAppointData']=$item ?>
+{{-- {{ $service['VisitAppointData']=$item }} --}}
+              <a href="javascript:;" data-real="{{ $item['MasterID'] }}" 
               data-param="{{openssl_encrypt(json_encode($item),"AES-128-ECB",md5(env('ENC_SALT'))) }}" 
-              data-url="{{ route('addoutdoordoctor') }}" data-size="md" title="Edit Area" 
+              data-url="{{ route('addvisitappoint') }}" data-size="md" title="Edit Area" 
               class="load-popup text-white edit-btn btn btn-info "><i class="fas fa-pencil-alt"></i> Edit</a>
 
 <a href="javascript:" data-param="{{openssl_encrypt(json_encode($service),"AES-128-ECB",md5(env('ENC_SALT'))) }}" 
-data-url="{{ route('addoutdoordoctor') }}" data-size="md" title="Edit Area"  class="load-popup btn btn-primary ml-1"><i class="fas fa-plus"></i> Service</a>
+data-url="{{ route('addvisitappoint') }}" data-size="md" title="Edit Area"  class="load-popup btn btn-primary ml-1"><i class="fas fa-plus"></i> Service</a>
 
             </div>
           

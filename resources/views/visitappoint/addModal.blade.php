@@ -9,7 +9,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('save-department')}}">
+          <form method="post" action="{{ route('save-visitappoint')}}">
             @csrf  
    
           <div class="modal-body bg-light">
@@ -21,11 +21,19 @@
               </div>
               <div class="form-group">
                 <label for="Name">Name</label>
-                <input type="text" class="form-control" name="Name" id="Name" placeholder="Department Name" value="{{ $Name }}">
+                <input type="text" class="form-control" name="Name" id="Name" placeholder="VisitAppoint Name" value="{{ $Name }}">
               </div>
               <div class="form-group">
-                <label for="Description">Description</label>
-                <input type="text" class="form-control" name="Description" id="Description" placeholder="Description" value="{{ $Description }}">
+                <label for="Charges">Charges</label>
+                <input type="text" class="form-control" name="Charges" id="Charges" placeholder="Charges" value="{{ $Charges }}">
+              </div>
+              <div class="form-group">
+                <label for="Active">Active</label>
+                <input type="text" class="form-control" name="Active" id="Active" placeholder="Active" value="{{ $Active }}">
+              </div>
+              <div class="form-group">
+                <label for="OutdoorDept">OutdoorDept</label>
+                <input type="text" class="form-control" name="OutdoorDept" id="OutdoorDept" placeholder="OutdoorDept" value="{{ $OutdoorDept }}">
               </div>
                             
            

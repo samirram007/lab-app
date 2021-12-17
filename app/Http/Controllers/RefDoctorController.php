@@ -9,19 +9,19 @@ namespace App\Http\Controllers;
     
 class RefdoctorController extends Controller
 {
-         function getRefdoctorList(Request $request){
+         function getRefDoctorList(Request $request){
        
             //return "Welcome!! to your Dashboard";
             
             //$data = array();
-            $data['title']= "Refdoctor";
-            $data['name']= "Refdoctor File";
+            $data['title']= "RefDoctor";
+            $data['name']= "RefDoctor File";
              
           
             if (Session::has('loginid')) 
             { 
                 $json_call_data=[ "UserID"=>'all']; 
-                $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
+                $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "*",];
                   $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'refdoctor/read', $json_call_data)->json();
                  // dd($response);
                  //Session::put('user_data',$data['response'][0]);
@@ -38,18 +38,18 @@ class RefdoctorController extends Controller
                 // $this->refdoctorAddModal($request);
                  }
                  $data['service']=["ServiceID"=>"","ServiceDate"=>date('Y-m-d H:i:s'),
-                 "RefdoctorID"=>"","RefdoctorData"=>[], "ProductID"=>"", "ProductData"=>[], "Description"=>"", "Amount"=>"", "Status"=>""];
+                 "RefDoctorID"=>"","RefDoctorData"=>[], "ProductID"=>"", "ProductData"=>[], "Description"=>"", "Amount"=>"", "Status"=>""];
                  return view('refdoctor.list', $data);
                      //dd($data);
             }
            
        
         } 
-        function RefdoctorAddModal(Request $request)
+        function RefDoctorAddModal(Request $request)
         {
     
     
-            $info['title']="Refdoctor [add/modify]";
+            $info['title']="RefDoctor [add/modify]";
             $info['size']=$request->get('size');
             $data=$request->get('param');
             $decrypt_data 						= openssl_decrypt($data,"AES-128-ECB",md5(env('ENC_SALT')));	
@@ -63,7 +63,7 @@ class RefdoctorController extends Controller
                 "html" => $GetView
             ]);
         }
-        function saveRefdoctor(Request $request)
+        function saveRefDoctor(Request $request)
             {
                 $data=$request->all();
                 $data_json = [
@@ -79,16 +79,16 @@ class RefdoctorController extends Controller
             //  dd(json_encode($data));
                 
               // $response = Http::post(env('API_RESOURCE_URL').'product/create', $data);
-               $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
+               $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "*",];
                $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'refdoctor/create', $data_json);
         
                 $res = $response->json();
                 
                 if ($res['status']) {
-                    toastr('Refdoctor update successfull','success');
+                    toastr('RefDoctor update successfull','success');
                     return back()->with('success', 'You have registered successfully ');
                 } else {
-                    toastr('Refdoctor update unsuccessfull','fail');
+                    toastr('RefDoctor update unsuccessfull','fail');
                     return back()->with('fail', 'Something went wrong');
                 }
                 //return $this->getRefdoctorList($request);

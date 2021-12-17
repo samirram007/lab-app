@@ -19,7 +19,7 @@ class ProductController extends Controller
 
         if (Session::has('loginid')) {
             $json_call_data = ["MasterID" => "all"];
-            $headers = ["Authorization" => "Bearer " . Session::get('_token'), "Accept" => "application/json"];
+            $headers = ["Authorization" => "Bearer " . Session::get('_token'), "Accept" => "*"];
             $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') . 'product/read', $json_call_data)->json();
 
             if ($response['status']) {
@@ -64,7 +64,7 @@ class ProductController extends Controller
         //dd($data);
 
         // $response = Http::post(env('API_RESOURCE_URL').'product/create', $data);
-        $headers = ["Authorization" => "Bearer " . Session::get('_token'), "Accept" => "application/json"];
+        $headers = ["Authorization" => "Bearer " . Session::get('_token'), "Accept" => "*"];
         $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') . 'product/create', $data);
 
         $res = $response->json();
@@ -97,7 +97,7 @@ class ProductController extends Controller
         $elmData = (!empty($decrypt_data)) ? json_decode($decrypt_data, true) : array();
      
         $json_call_data = ["MasterID" => "all"];
-        $headers = ["Authorization" => "Bearer " . Session::get('_token'), "Accept" => "application/json"];
+        $headers = ["Authorization" => "Bearer " . Session::get('_token'), "Accept" => "*"];
         $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') . 'product/read', $json_call_data)->json();
         if ($response['status']) {
             $elmData['product'] = $response['data'];
@@ -132,7 +132,7 @@ class ProductController extends Controller
        
 
       //  $response = Http::post(env('API_RESOURCE_URL').'product/create', $data);
-        $headers = ["Authorization" => "Bearer " . Session::get('_token'), "Accept" => "application/json"];
+        $headers = ["Authorization" => "Bearer " . Session::get('_token'), "Accept" => "*"];
         $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') . 'product/setIncludeProductData', $data)->json();
  
         if ($response['status']) {
@@ -148,7 +148,7 @@ class ProductController extends Controller
     }
     public function getIncludeProduct($ProductID){
         $json_call_data = ["ProductID" => $ProductID];
-        $headers = ["Authorization" => "Bearer " . Session::get('_token'), "Accept" => "application/json"];
+        $headers = ["Authorization" => "Bearer " . Session::get('_token'), "Accept" => "*"];
         $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') . 'product/getIncludeProductData', $json_call_data)->json();
         if ($response['status']) {
 

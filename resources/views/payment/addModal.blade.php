@@ -9,7 +9,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('save-organisation')}}">
+          <form method="post" action="{{ route('save-payment')}}">
             @csrf  
    
           <div class="modal-body bg-light">
@@ -20,34 +20,38 @@
                 <input type="text" class="form-control" name="Code" id="Code" placeholder="" value="{{ $Code }}">
               </div>
               <div class="form-group">
-                <label for="Name">Name</label>
-                <input type="text" class="form-control" name="Name" id="Name" placeholder="Organisation Name" value="{{ $Name }}">
+                <label for="BookingID">BookingID</label>
+                <input type="text" class="form-control" name="BookingID" id="BookingID" placeholder="BookingID" value="{{ $BookingID }}">
               </div>
               <div class="form-group">
-                <label for="ContactNo1">ContactNo1</label>
-                <input type="text" class="form-control" name="ContactNo1" id="ContactNo1" placeholder="ContactNo1" value="{{ $ContactNo1 }}">
+                <label for="PaymentNo">PaymentNo</label>
+                <input type="text" class="form-control" name="PaymentNo" id="PaymentNo" placeholder="PaymentNo" value="{{ $PaymentNo }}">
               </div>
               <div class="form-group">
-                <label for="ContactNo2">ContactNo2</label>
-                <input type="text" class="form-control" name="ContactNo2" id="ContactNo2" placeholder="ContactNo2" value="{{ $ContactNo2 }}">
+                <label for="PaymentID">PaymentID</label>
+                <input type="text" class="form-control" name="PaymentID" id="PaymentID" placeholder="PaymentID" value="{{ $PaymentID }}">
               </div>
               <div class="form-group">
-                <label for="Address">Address</label>
-                <input type="text" class="form-control" name="Address" id="Address" placeholder="Address" value="{{ $Address }}">
+                <label for="Amount">Amount</label>
+                <input type="text" class="form-control" name="Amount" id="Amount" placeholder="Amount" value="{{ $Amount }}">
               </div>
               <div class="form-group">
-                <label for="Email">Email</label>
-                <input type="text" class="form-control" name="Email" id="Email" placeholder="Email" value="{{ $Email }}">
+                <label for="PaymentMode">PaymentMode</label>
+                <input type="text" class="form-control" name="PaymentMode" id="PaymentMode" placeholder="PaymentMode" value="{{ $PaymentMode }}">
               </div>
               <div class="form-group">
-                <label for="DateOfFoundation">DateOfFoundation</label>
-                <input type="text" class="form-control" name="DateOfFoundation" id="DateOfFoundation" placeholder="DateOfFoundation" value="{{ $DateOfFoundation }}">
+                <label for="Origin">Origin</label>
+                <input type="text" class="form-control" name="Origin" id="Origin" placeholder="Origin" value="{{ $Origin }}">
               </div>
               <div class="form-group">
-                <label for="CELicenseNo">CELicenseNo</label>
-                <input type="text" class="form-control" name="CELicenseNo" id="CELicenseNo" placeholder="CELicenseNo" value="{{ $CELicenseNo }}">
+                <label for="PaymentDate">PaymentDate</label>
+                <input type="text" class="form-control" name="PaymentDate" id="PaymentDate" placeholder="PaymentDate" value="{{ $PaymentDate }}">
               </div>
-               
+              <div class="form-group">
+                <label for="TransactionNo">TransactionNo</label>
+                <input type="text" class="form-control" name="TransactionNo" id="TransactionNo" placeholder="TransactionNo" value="{{ $TransactionNo }}">
+              </div>
+                        
               
            
           </div>

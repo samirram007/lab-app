@@ -7,21 +7,21 @@ namespace App\Http\Controllers;
     use Illuminate\Support\Facades\Session;
     use Illuminate\Support\Facades\Hash;
     
-class OutdoordoctorController extends Controller
+class OutdoorDoctorController extends Controller
 {
-         function getOutdoordoctorList(Request $request){
+         function getOutdoorDoctorList(Request $request){
        
             //return "Welcome!! to your Dashboard";
             
             //$data = array();
-            $data['title']= "Outdoordoctor";
-            $data['name']= "Outdoordoctor File";
+            $data['title']= "OutdoorDoctor";
+            $data['name']= "OutdoorDoctor File";
              
           
             if (Session::has('loginid')) 
             { 
                 $json_call_data=[ "UserID"=>'all']; 
-                $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
+                $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "*",];
                   $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'outdoordoctor/read', $json_call_data)->json();
                  // dd($response);
                  //Session::put('user_data',$data['response'][0]);
@@ -40,18 +40,18 @@ class OutdoordoctorController extends Controller
                 // $this->outdoordoctorAddModal($request);
                  }
                  $data['service']=["ServiceID"=>"","ServiceDate"=>date('Y-m-d H:i:s'),
-                 "OutdoordoctorID"=>"","OutdoordoctorData"=>[], "ProductID"=>"", "ProductData"=>[], "Description"=>"", "Amount"=>"", "Status"=>""];
+                 "OutdoorDoctorID"=>"","OutdoorDoctorData"=>[], "ProductID"=>"", "ProductData"=>[], "Description"=>"", "Amount"=>"", "Status"=>""];
                  return view('outdoordoctor.list', $data);
                      //dd($data);
             }
            
        
         } 
-        function OutdoordoctorAddModal(Request $request)
+        function OutdoorDoctorAddModal(Request $request)
         {
     
     
-            $info['title']="Outdoordoctor [add/modify]";
+            $info['title']="OutdoorDoctor [add/modify]";
             $info['size']=$request->get('size');
             $data=$request->get('param');
             $decrypt_data 						= openssl_decrypt($data,"AES-128-ECB",md5(env('ENC_SALT')));	
@@ -65,7 +65,7 @@ class OutdoordoctorController extends Controller
                 "html" => $GetView
             ]);
         }
-        function saveOutdoordoctor(Request $request)
+        function saveOutdoorDoctor(Request $request)
             {
                 $data=$request->all();
                 $data_json = [
@@ -83,19 +83,19 @@ class OutdoordoctorController extends Controller
             //  dd(json_encode($data));
                 
               // $response = Http::post(env('API_RESOURCE_URL').'product/create', $data);
-               $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
+               $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "*",];
                $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'outdoordoctor/create', $data_json);
         
                 $res = $response->json();
                 
                 if ($res['status']) {
-                    toastr('Outdoordoctor update successfull','success');
+                    toastr('OutdoorDoctor update successfull','success');
                     return back()->with('success', 'You have registered successfully ');
                 } else {
-                    toastr('Outdoordoctor update unsuccessfull','fail');
+                    toastr('OutdoorDoctor update unsuccessfull','fail');
                     return back()->with('fail', 'Something went wrong');
                 }
-                //return $this->getOutdoordoctorList($request);
+                //return $this->getOutdoorDoctorList($request);
               
             }
         

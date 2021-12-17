@@ -21,7 +21,7 @@
               </div>
               <div class="form-group">
                 <label for="Name">Name</label>
-                <input type="text" class="form-control" name="Name" id="Name" placeholder="Outdoordoctor Name" value="{{ $Name }}">
+                <input type="text" class="form-control" name="Name" id="Name" placeholder="OutdoorDoctor Name" value="{{ $Name }}">
               </div>          
               <div class="form-group">
                 <label for="ContactNo">ContactNo</label>

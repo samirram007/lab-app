@@ -9,7 +9,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('save-organisation')}}">
+          <form method="post" action="{{ route('save-test')}}">
             @csrf  
    
           <div class="modal-body bg-light">
@@ -21,31 +21,35 @@
               </div>
               <div class="form-group">
                 <label for="Name">Name</label>
-                <input type="text" class="form-control" name="Name" id="Name" placeholder="Organisation Name" value="{{ $Name }}">
+                <input type="text" class="form-control" name="Name" id="Name" placeholder="Test Name" value="{{ $Name }}">
               </div>
               <div class="form-group">
-                <label for="ContactNo1">ContactNo1</label>
-                <input type="text" class="form-control" name="ContactNo1" id="ContactNo1" placeholder="ContactNo1" value="{{ $ContactNo1 }}">
+                <label for="Alias">Alias</label>
+                <input type="text" class="form-control" name="Alias" id="Alias" placeholder="Alias" value="{{ $Alias }}">
               </div>
               <div class="form-group">
-                <label for="ContactNo2">ContactNo2</label>
-                <input type="text" class="form-control" name="ContactNo2" id="ContactNo2" placeholder="ContactNo2" value="{{ $ContactNo2 }}">
+                <label for="TestGroupID">TestGroupID</label>
+                <input type="text" class="form-control" name="TestGroupID" id="TestGroupID" placeholder="TestGroupID" value="{{ $TestGroupID }}">
               </div>
               <div class="form-group">
-                <label for="Address">Address</label>
-                <input type="text" class="form-control" name="Address" id="Address" placeholder="Address" value="{{ $Address }}">
+                <label for="TestCategoryID">TestCategoryID</label>
+                <input type="text" class="form-control" name="TestCategoryID" id="TestCategoryID" placeholder="TestCategoryID" value="{{ $TestCategoryID }}">
               </div>
               <div class="form-group">
-                <label for="Email">Email</label>
-                <input type="text" class="form-control" name="Email" id="Email" placeholder="Email" value="{{ $Email }}">
+                <label for="TestDuration">TestDuration</label>
+                <input type="text" class="form-control" name="TestDuration" id="TestDuration" placeholder="TestDuration" value="{{ $TestDuration }}">
               </div>
               <div class="form-group">
-                <label for="DateOfFoundation">DateOfFoundation</label>
-                <input type="text" class="form-control" name="DateOfFoundation" id="DateOfFoundation" placeholder="DateOfFoundation" value="{{ $DateOfFoundation }}">
+                <label for="Charges">Charges</label>
+                <input type="text" class="form-control" name="Charges" id="Charges" placeholder="Charges" value="{{ $Charges }}">
               </div>
               <div class="form-group">
-                <label for="CELicenseNo">CELicenseNo</label>
-                <input type="text" class="form-control" name="CELicenseNo" id="CELicenseNo" placeholder="CELicenseNo" value="{{ $CELicenseNo }}">
+                <label for="StartDate">StartDate</label>
+                <input type="text" class="form-control" name="StartDate" id="StartDate" placeholder="StartDate" value="{{ $StartDate }}">
+              </div>
+              <div class="form-group">
+                <label for="EndDate">EndDate</label>
+                <input type="text" class="form-control" name="EndDate" id="EndDate" placeholder="EndDate" value="{{ $EndDate }}">
               </div>
                
               

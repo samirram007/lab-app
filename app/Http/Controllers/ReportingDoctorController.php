@@ -7,21 +7,21 @@ namespace App\Http\Controllers;
     use Illuminate\Support\Facades\Session;
     use Illuminate\Support\Facades\Hash;
     
-class ReportingdoctorController extends Controller
+class ReportingDoctorController extends Controller
 {
-         function getReportingdoctorList(Request $request){
+         function getReportingDoctorList(Request $request){
        
             //return "Welcome!! to your Dashboard";
             
             //$data = array();
-            $data['title']= "Reportingdoctor";
-            $data['name']= "Reportingdoctor File";
+            $data['title']= "ReportingDoctor";
+            $data['name']= "ReportingDoctor File";
              
           
             if (Session::has('loginid')) 
             { 
                 $json_call_data=[ "UserID"=>'all']; 
-                $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
+                $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "*",];
                   $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'reportingdoctor/read', $json_call_data)->json();
                  // dd($response);
                  //Session::put('user_data',$data['response'][0]);
@@ -40,18 +40,18 @@ class ReportingdoctorController extends Controller
                 // $this->reportingdoctorAddModal($request);
                  }
                  $data['service']=["ServiceID"=>"","ServiceDate"=>date('Y-m-d H:i:s'),
-                 "ReportingdoctorID"=>"","ReportingdoctorData"=>[], "ProductID"=>"", "ProductData"=>[], "Description"=>"", "Amount"=>"", "Status"=>""];
+                 "ReportingDoctorID"=>"","ReportingDoctorData"=>[], "ProductID"=>"", "ProductData"=>[], "Description"=>"", "Amount"=>"", "Status"=>""];
                  return view('reportingdoctor.list', $data);
                      //dd($data);
             }
            
        
         } 
-        function ReportingdoctorAddModal(Request $request)
+        function ReportingDoctorAddModal(Request $request)
         {
     
     
-            $info['title']="Reportingdoctor [add/modify]";
+            $info['title']="ReportingDoctor [add/modify]";
             $info['size']=$request->get('size');
             $data=$request->get('param');
             $decrypt_data 						= openssl_decrypt($data,"AES-128-ECB",md5(env('ENC_SALT')));	
@@ -65,7 +65,7 @@ class ReportingdoctorController extends Controller
                 "html" => $GetView
             ]);
         }
-        function saveReportingdoctor(Request $request)
+        function saveReportingDoctor(Request $request)
             {
                 $data=$request->all();
                 $data_json = [
@@ -82,19 +82,19 @@ class ReportingdoctorController extends Controller
             //  dd(json_encode($data));
                 
               // $response = Http::post(env('API_RESOURCE_URL').'product/create', $data);
-               $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "application/json",];
+               $headers=["Authorization" => "Bearer ".Session::get('_token'),"Accept" => "*",];
                $response = Http::withHeaders($headers)->post(env('API_RESOURCE_URL') .'reportingdoctor/create', $data_json);
         
                 $res = $response->json();
                 
                 if ($res['status']) {
-                    toastr('Reportingdoctor update successfull','success');
+                    toastr('ReportingDoctor update successfull','success');
                     return back()->with('success', 'You have registered successfully ');
                 } else {
-                    toastr('Reportingdoctor update unsuccessfull','fail');
+                    toastr('ReportingDoctor update unsuccessfull','fail');
                     return back()->with('fail', 'Something went wrong');
                 }
-                //return $this->getReportingdoctorList($request);
+                //return $this->getReportingDoctorList($request);
               
             }
         

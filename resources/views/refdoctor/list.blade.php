@@ -78,9 +78,9 @@
                                     <td>{{  $item['Origin'] }}</td>
                                     <td><div class="edit-icon">
                                     
-<?php $service['RefdoctorID']=$item['UserID'] ?>
-<?php $service['RefdoctorData']=$item ?>
-{{-- {{ $service['RefdoctorData']=$item }} --}}
+<?php $service['RefDoctorID']=$item['UserID'] ?>
+<?php $service['RefDoctorData']=$item ?>
+{{-- {{ $service['RefDoctorData']=$item }} --}}
               <a href="javascript:;" data-real="{{ $item['UserID'] }}" 
               data-param="{{openssl_encrypt(json_encode($item),"AES-128-ECB",md5(env('ENC_SALT'))) }}" 
               data-url="{{ route('addrefdoctor') }}" data-size="md" title="Edit Area" 

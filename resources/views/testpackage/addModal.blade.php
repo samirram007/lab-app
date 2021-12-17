@@ -9,7 +9,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('save-department')}}">
+          <form method="post" action="{{ route('save-testpackage')}}">
             @csrf  
    
           <div class="modal-body bg-light">
@@ -21,13 +21,30 @@
               </div>
               <div class="form-group">
                 <label for="Name">Name</label>
-                <input type="text" class="form-control" name="Name" id="Name" placeholder="Department Name" value="{{ $Name }}">
+                <input type="text" class="form-control" name="Name" id="Name" placeholder="TestPackage Name" value="{{ $Name }}">
               </div>
               <div class="form-group">
-                <label for="Description">Description</label>
-                <input type="text" class="form-control" name="Description" id="Description" placeholder="Description" value="{{ $Description }}">
+                <label for="Alias">Alias</label>
+                <input type="text" class="form-control" name="Alias" id="Alias" placeholder="Alias" value="{{ $Alias }}">
               </div>
-                            
+              <div class="form-group">
+                <label for="TestArray">TestArray</label>
+                <input type="text" class="form-control" name="TestArray" id="TestArray" placeholder="TestArray" value="{{ $TestArray }}">
+              </div>
+              <div class="form-group">
+                <label for="Charges">Charges</label>
+                <input type="text" class="form-control" name="Charges" id="Charges" placeholder="Charges" value="{{ $Charges }}">
+              </div>
+              <div class="form-group">
+                <label for="StartDate">StartDate</label>
+                <input type="text" class="form-control" name="StartDate" id="StartDate" placeholder="StartDate" value="{{ $StartDate }}">
+              </div>
+              <div class="form-group">
+                <label for="EndDate">EndDate</label>
+                <input type="text" class="form-control" name="EndDate" id="EndDate" placeholder="EndDate" value="{{ $EndDate }}">
+              </div>
+               
+              
            
           </div>
           <div class="modal-footer justify-content-between">

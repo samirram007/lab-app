@@ -18,10 +18,10 @@
               <div class="col-sm-6">
                 
                 <ol class="breadcrumb float-sm-right">
-                  {{-- <!--li class="breadcrumb"><a class="btn btn-primary mx-2" href="{{ route('product-page')}}"><i class="fas fa-plus mx-1"></i>New</a></li--> --}}
+                  {{-- <!--li class="breadcrumb"><a class="btn btn-primary mx-2" href="{{ route('testcategory-page')}}"><i class="fas fa-plus mx-1"></i>New</a></li--> --}}
                   <li class="breadcrumb">
                     
-                    {{-- <!--a   href ="{{ route('addproduct') }}"  class="btn btn-primary mx-2" data-toggle="modal" data-target="#modalAddProduct"--> --}}
+                    {{-- <!--a   href ="{{ route('addtestcategory') }}"  class="btn btn-primary mx-2" data-toggle="modal" data-target="#modalAddProduct"--> --}}
                       
                 </li>
                   
@@ -44,11 +44,11 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header d-flex">
-                          <a href="javascript:;" data-real="{{ $new['UserID'] }}" 
+                          <a href="javascript:;" data-real="{{ $new['MasterID'] }}" 
                       data-param="{{openssl_encrypt(json_encode($new),"AES-128-ECB",md5(env('ENC_SALT'))) }}" 
-                      data-url="{{ route('addoutdoordoctor') }}" data-size="md" title="Edit Area" class="load-popup btn btn-primary mx-2  "> 
+                      data-url="{{ route('addtestcategory') }}" data-size="md" title="Edit Area" class="load-popup btn btn-primary mx-2  "> 
                   <i class="fas fa-plus mx-1"></i>New</a>
-                          {{-- <h3 class="card-title">Service item with default features</h3> --}}
+                          {{-- <h3 class="card-title">TestCategory item with default features</h3> --}}
                           
                         </div>
                         <!-- /.card-header -->
@@ -58,13 +58,9 @@
                             <thead>
                             <tr>
                               <th>Code</th>
-                              <th>Name</th>                              
-                              <th>Contact</th>
-                              <th>DoctorType</th>
-                              <th>Degree</th>
-                              <th>RegistrationNo</th>
-                              <th>ChamberTimimg</th>
-                              <th>ChamberStartDate</th>
+                              <th>Name</th>                                                         
+                              <th>TestGroupID</th>    
+                              <th>MethodArray</th>                         
                               <th>Action</th>
                             </tr>
                             </thead>
@@ -73,25 +69,21 @@
                                 
                                 <tr>
                                     <td>{{  $item['Code'] }}</td>
-                                    <td>{{  $item['Name'] }} </td>                                   
-                                    <td>{{  $item['ContactNo'] }}</td>
-                                    <td>{{  $item['DoctorType'] }}</td>
-                                    <td>{{  $item['Degree'] }}</td>
-                                    <td>{{  $item['RegistrationNo'] }}</td>
-                                    <td>{{  $item['ChamberTimimg'] }}</td>
-                                    <td>{{  $item['ChamberStartDate'] }}</td>
+                                    <td>{{  $item['Name'] }} </td>                                                                        
+                                    <td>{{  $item['TestGroupID'] }}</td>  
+                                    <td>{{  $item['MethodArray'] }}</td>                                 
                                     <td><div class="edit-icon">
                                     
-<?php $service['OutdoorDoctorID']=$item['UserID'] ?>
-<?php $service['OutdoorDoctorData']=$item ?>
-{{-- {{ $service['OutdoorDoctorData']=$item }} --}}
-              <a href="javascript:;" data-real="{{ $item['UserID'] }}" 
+<?php $service['TestCategoryID']=$item['MasterID'] ?>
+<?php $service['TestCategoryData']=$item ?>
+{{-- {{ $service['TestCategoryData']=$item }} --}}
+              <a href="javascript:;" data-real="{{ $item['MasterID'] }}" 
               data-param="{{openssl_encrypt(json_encode($item),"AES-128-ECB",md5(env('ENC_SALT'))) }}" 
-              data-url="{{ route('addoutdoordoctor') }}" data-size="md" title="Edit Area" 
+              data-url="{{ route('addtestcategory') }}" data-size="md" title="Edit Area" 
               class="load-popup text-white edit-btn btn btn-info "><i class="fas fa-pencil-alt"></i> Edit</a>
 
 <a href="javascript:" data-param="{{openssl_encrypt(json_encode($service),"AES-128-ECB",md5(env('ENC_SALT'))) }}" 
-data-url="{{ route('addoutdoordoctor') }}" data-size="md" title="Edit Area"  class="load-popup btn btn-primary ml-1"><i class="fas fa-plus"></i> Service</a>
+data-url="{{ route('addtestcategory') }}" data-size="md" title="Edit Area"  class="load-popup btn btn-primary ml-1"><i class="fas fa-plus"></i> Service</a>
 
             </div>
           
@@ -115,7 +107,7 @@ data-url="{{ route('addoutdoordoctor') }}" data-size="md" title="Edit Area"  cla
           </div><!-- /.container-fluid -->
         </section>
         <!-- /.content -->
-        {{-- @include('addproduct') --}}
+        {{-- @include('addtestcategory') --}}
       </div>
 
       <script>

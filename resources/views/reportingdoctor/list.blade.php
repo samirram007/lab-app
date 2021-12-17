@@ -46,7 +46,7 @@
                         <div class="card-header d-flex">
                           <a href="javascript:;" data-real="{{ $new['UserID'] }}" 
                       data-param="{{openssl_encrypt(json_encode($new),"AES-128-ECB",md5(env('ENC_SALT'))) }}" 
-                      data-url="{{ route('addreporting_doctor') }}" data-size="md" title="Edit Area" class="load-popup btn btn-primary mx-2  "> 
+                      data-url="{{ route('addreportingdoctor') }}" data-size="md" title="Edit Area" class="load-popup btn btn-primary mx-2  "> 
                   <i class="fas fa-plus mx-1"></i>New</a>
                           {{-- <h3 class="card-title">Service item with default features</h3> --}}
                           
@@ -80,16 +80,16 @@
                                     <td>{{  $item['Salary'] }}</td>
                                     <td><div class="edit-icon">
                                     
-<?php $service['Reporting_doctorID']=$item['UserID'] ?>
-<?php $service['Reporting_doctorData']=$item ?>
-{{-- {{ $service['Reporting_doctorData']=$item }} --}}
+<?php $service['ReportingDoctorID']=$item['UserID'] ?>
+<?php $service['ReportingDoctorData']=$item ?>
+{{-- {{ $service['ReportingDoctorData']=$item }} --}}
               <a href="javascript:;" data-real="{{ $item['UserID'] }}" 
               data-param="{{openssl_encrypt(json_encode($item),"AES-128-ECB",md5(env('ENC_SALT'))) }}" 
-              data-url="{{ route('addreporting_doctor') }}" data-size="md" title="Edit Area" 
+              data-url="{{ route('addreportingdoctor') }}" data-size="md" title="Edit Area" 
               class="load-popup text-white edit-btn btn btn-info "><i class="fas fa-pencil-alt"></i> Edit</a>
 
 <a href="javascript:" data-param="{{openssl_encrypt(json_encode($service),"AES-128-ECB",md5(env('ENC_SALT'))) }}" 
-data-url="{{ route('addreporting_doctor') }}" data-size="md" title="Edit Area"  class="load-popup btn btn-primary ml-1"><i class="fas fa-plus"></i> Service</a>
+data-url="{{ route('addreportingdoctor') }}" data-size="md" title="Edit Area"  class="load-popup btn btn-primary ml-1"><i class="fas fa-plus"></i> Service</a>
 
             </div>
           

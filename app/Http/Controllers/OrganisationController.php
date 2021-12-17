@@ -25,14 +25,14 @@ class OrganisationController extends Controller
              if($response['status']){
                 $data['collection']=$response['data'];
                // dd($response['data']);
-               $data['new']=["MasterID"=>"","UserType"=>"organisation","Code"=>"", "Name"=>"", "ContactNo1"=>"",
+               $data['new']=["MasterID"=>"","MasterType"=>"organisation","Code"=>"", "Name"=>"", "ContactNo1"=>"",
                 "ContactNo2"=>"", "Address"=>"", "Email"=>"", "DateofFoundation"=>"", "CELicenseNo"=>""];
               
              }
              else
              {
               $data['collection']=[];
-             $data['new']=["MasterID"=>"","UserType"=>"organisation","Code"=>"", "Name"=>"",
+             $data['new']=["MasterID"=>"","MasterType"=>"organisation","Code"=>"", "Name"=>"",
               "ContactNo1"=>"", "ContactNo2"=>"", "Address"=>"", "Email"=>"", "DateofFoundation"=>"", "CELicenseNo"=>""];
             // $this->OrganisationAddModal($request);
              }
@@ -67,7 +67,7 @@ class OrganisationController extends Controller
             $data=$request->all();
             $data_json = [
                 "MasterID" => is_null($request->MasterID)? '':$request->MasterID,
-                "UserType" => $request->UserType,
+                "MasterType" => $request->MasterType,
                 "Code" => $request->Code,
                 "Name" => $request->Name,
                 "ContactNo1" => $request->ContactNo1,

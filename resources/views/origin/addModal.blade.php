@@ -9,7 +9,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('save-organisation')}}">
+          <form method="post" action="{{ route('save-origin')}}">
             @csrf  
    
           <div class="modal-body bg-light">
@@ -21,7 +21,7 @@
               </div>
               <div class="form-group">
                 <label for="Name">Name</label>
-                <input type="text" class="form-control" name="Name" id="Name" placeholder="Organisation Name" value="{{ $Name }}">
+                <input type="text" class="form-control" name="Name" id="Name" placeholder="Origin Name" value="{{ $Name }}">
               </div>
               <div class="form-group">
                 <label for="ContactNo1">ContactNo1</label>
